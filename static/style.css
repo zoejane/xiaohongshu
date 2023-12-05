@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title {
+    font-size: 48px;
+    color: #FF2442;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0;
+}
+
+.left {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.right {
+    flex: 1;
+}
+
+.tip {
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: #aaa;
+}
+
+.input {
+    width: 100%;
+    height: 160px;
+    padding: 15px;
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    border-radius: 6px;
+    border-color: #46a5dd;
+    outline: none;
+    color: #000;
+}
+
+.generate {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+
+    line-height: 40px;
+    text-align: center;
+
+    color: #fff;
+    background-color: #46a5dd;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.output {
+    padding: 20px;
+    width: 100%;
+    height: 300px;
+
+    line-height: 1.5;
+    border: 1px solid #FF2442;
+    border-radius: 6px;
+    color: #000;
+    overflow: scroll;
+}
+
+.save {
+    margin-top: 10px;
+    height: 40px;
+    position: relative;
+}
+
+.save-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #46a5dd;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
