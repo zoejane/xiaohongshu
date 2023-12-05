@@ -6,18 +6,18 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import zhipuai
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
-import zhipuai
+from typing import Optional
 
-load_dotenv()
+# load_dotenv()
 
 app = FastAPI()
 
 zhipuai.api_key = os.getenv("ZHIPU_API")
 
 class Item(BaseModel):
-    prompt: str | None = ''
+    prompt: Optional[str] = ''
 
 templates = Jinja2Templates(directory="templates")
 
@@ -32,7 +32,7 @@ async def generate(item: Item):
     def stream():
         response = zhipuai.model_api.sse_invoke(
             model="chatglm_pro",
-            prompt=[{"role": "user", "content": f"你好，请按照{item.prompt}的要求，生成小红书文案，要求包括三部分：标题、内容和标签"}],
+            prompt=[{"role": "user", "content": f"你好，请按照{item.prompt}的要求，生成小红书文案，要求包括三部分：标题、内容和标签.请用丰富的表情符号来增加内容可读性。"}],
             top_p=0.7,
             temperature=0.9,
         )
@@ -42,4 +42,4 @@ async def generate(item: Item):
     return StreamingResponse(stream())
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", port=8000,  reload=True, log_level="info")
+    uvicorn.run("main:app", port=1234,  reload=True, log_level="info")
