@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- 页面宽度与浏览器同宽 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 导入css -->
     <link href="/static/style.css" rel="stylesheet">
     <title>小红书文案生成器</title>
 </head>
@@ -16,19 +14,18 @@
         <div class="content">
             <section class="left">
                 <div class="tip">一键生成小红书文案</div>
-                <textarea 
-                    class="input"
-                    name="input"
-                    id="input"
-                    placeholder="详细描述你想要生成的文案，包括主题、需要包含的观点和内容"
-                ></textarea>
+                <textarea class="input" name="input" id="input" placeholder="详细描述你想要生成的文案，包括主题、需要包含的观点和内容"></textarea>
                 <div class="generate" id="generate">生成文案</div>
             </section>
             <section class="right">
                 <div class="output" id="output"></div>
+                <button class="copy" id="copy">一键复制</button> <!-- 添加复制按钮 -->
             </section>
         </div>
     </main>
+    <footer>
+        <p>如果您有任何反馈，<a href="mailto:dadac123.glitch@gmail.com">欢迎与我联系</a>。</p>
+    </footer>
     <script src="/static/index.js"></script>
 </body>
 </html>

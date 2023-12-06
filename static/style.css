@@ -1,98 +1,125 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .main {
-    width: 1000px;
-    margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 header {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
 }
 
 .title {
-    font-size: 48px;
-    color: #FF2442;
+  font-size: 36px;
+  color: #ff2442; /* 确保标题颜色为红色 */
+  text-align: center;
 }
 
 .content {
-    display: flex;
-    flex-direction: row;
-    padding: 30px 0;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
 }
 
-.left {
-    flex: 1;
-    margin-right: 30px;
-}
-
+.left,
 .right {
-    flex: 1;
+  flex: 1;
+  padding: 0 10px;
 }
 
 .tip {
-    margin-bottom: 40px;
-    font-size: 24px;
-    color: #aaa;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #aaa;
 }
 
-.input {
-    width: 100%;
-    height: 160px;
-    padding: 15px;
-    margin-bottom: 20px;
-
-    font-size: 16px;
-    border-radius: 6px;
-    border-color: #46a5dd;
-    outline: none;
-    color: #000;
-}
-
-.generate {
-    width: 100%;
-    height: 40px;
-    margin: 0 auto;
-
-    line-height: 40px;
-    text-align: center;
-
-    color: #fff;
-    background-color: #46a5dd;
-    border-radius: 15px;
-    cursor: pointer;
+.input,
+.output {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #46a5dd;
+  outline: none;
 }
 
 .output {
-    padding: 20px;
-    width: 100%;
-    height: 300px;
-
-    line-height: 1.5;
-    border: 1px solid #FF2442;
-    border-radius: 6px;
-    color: #000;
-    overflow: scroll;
+  min-height: 200px; /* 设置最小高度以使初始大小更大 */
 }
 
-.save {
-    margin-top: 10px;
-    height: 40px;
-    position: relative;
+.generate,
+.copy {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #46a5dd;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px 0; /* 调整按钮上下边距以实现垂直居中 */
+  font-size: 16px;
+  border: none;
+  display: flex;
+  align-items: center; /* 确保文本垂直居中 */
+  justify-content: center; /* 确保文本水平居中 */
 }
 
-.save-button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100px;
-    height: 36px;
-    border-radius: 10px;
-    background-color: #46a5dd;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
+/* 新增 footer 样式 */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  border-top: 1px solid #ccc;
+}
+
+footer a {
+  color: #46a5dd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main {
+    padding: 0 5px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .tip {
+    font-size: 16px;
+  }
+
+  .input,
+  .output,
+  .generate,
+  .copy {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  footer {
+    font-size: 14px; /* 在移动设备上稍微减小字体大小 */
+  }
 }
